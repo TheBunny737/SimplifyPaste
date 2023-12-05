@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './PastingComponent.css'; // Import CSS file
+import './PastingComponent.css';
 
 const PastingComponent = () => {
   const [text, setText] = useState('');
