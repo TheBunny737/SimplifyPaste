@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors'); // Import the cors package
 
 const app = express();
 app.use(cors());
 
+// MongoDB connection
 mongoose.connect('mongodb://localhost:27017/pastebin', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -13,6 +14,7 @@ db.once('open', function () {
   console.log('Connected to MongoDB');
 });
 
+// Define a mongoose schema for your 'paste' collection
 const pasteSchema = new mongoose.Schema({
   text: String,
   createdAt: {
@@ -25,6 +27,8 @@ const Paste = mongoose.model('Paste', pasteSchema);
 
 app.use(bodyParser.json());
 
+
+// API endpoint to retrieve a paste by ID
 app.get('/api/paste/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -38,6 +42,7 @@ app.get('/api/paste/:id', async (req, res) => {
   }
 });
 
+// API endpoint to save text into MongoDB
 app.post('/api/paste', async (req, res) => {
   try {
     const { text } = req.body;
@@ -49,6 +54,7 @@ app.post('/api/paste', async (req, res) => {
   }
 });
 
+// API 
 const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
