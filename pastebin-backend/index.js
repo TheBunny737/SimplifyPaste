@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/pastebin', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
@@ -46,6 +48,7 @@ app.post('/api/paste', async (req, res) => {
     res.status(500).json({ error: 'Unable to save the paste' });
   }
 });
+
 
 const PORT = 8000;
 app.listen(PORT, () => {
