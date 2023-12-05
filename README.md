@@ -8,6 +8,8 @@ SimplifyPaste เป็นโปรเจ็คสำหรับการวา
 ### ในส่วนของ Backend
 - รันคำสั่ง <b>cd pastebin-backend</b> ลงใน Terminal
 - รันคำสั่ง <b>npm install express mongoose body-parser</b> ลงใน Terminal
+- รันคำสั่ง <b>npm install axios</b> ลงใน Terminal
+- รันคำสั่ง <b>npm install cors</b> ลงใน Terminal
 ### ในส่วนของ Frontend
 - รันคำสั่ง <b>cd pastebin-frontend</b> ลงใน Terminal
 - รันคำสั่ง <b>npm install axios</b> ลงใน Terminal
