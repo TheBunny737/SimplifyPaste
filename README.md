@@ -1,1 +1,1 @@
-# Test Commit
+# SimplifyPaste Application
