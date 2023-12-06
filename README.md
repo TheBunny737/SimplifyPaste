@@ -18,3 +18,7 @@ SimplifyPaste เป็นโปรเจ็คสำหรับการวา
 ## วิธีรันโปรเจ็ค
 - เปิด Backend ด้วยวิธีการรันคำสั่ง <b>cd pastebin-backend</b> และพิมพ์คำสั่ง <b>node index.js</b> ลงใน Terminal
 - เปิด Frontend ด้วยวิธีการรันคำสั่ง <b>cd pastebin-frontend</b> และพิมพ์คำสั่ง <b>npm start</b> ลงใน Terminal
+
+## วิธีใช้ Unit Test
+- Backend ให้พิมพ์คำสั่ง <b>npm run test</b> ลงใน Terminal
+- Frontend ให้พิมพ์คำสั่ง <b>npx cypress open</b> เลือกเป็น E2E Testing และ เลือกเบราว์เซอร์ที่ต้องการจะรันเทส

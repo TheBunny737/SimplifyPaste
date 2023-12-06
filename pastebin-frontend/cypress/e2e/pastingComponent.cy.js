@@ -17,7 +17,7 @@ describe('PastingComponent', () => {
     cy.url().should('include', '/view/'); // Navigate to the view page
 
     // Verify if the entered text is displayed on the view page
-    cy.get('.paste-text').should('contain', enteredText); // Replace '.paste-text' with your actual selector
+    cy.get('.paste-text').should('contain', enteredText);
   });
 
   it('should go back to menu', () => {
@@ -27,10 +27,9 @@ describe('PastingComponent', () => {
 
     // Click the Paste button and navigate to the view page
     cy.contains('button', 'Paste').click();
-    cy.url().should('include', '/view/'); // Navigate to the view page
+    cy.url().should('include', '/view/'); 
 
-    // Verify if the entered text is displayed on the view page
-    cy.get('.paste-text').should('contain', enteredText); // Replace '.paste-text' with your actual selector
+    cy.get('.paste-text').should('contain', enteredText);
     cy.get('.link').click();
     cy.url().should('not.include', '/view/');
   });
